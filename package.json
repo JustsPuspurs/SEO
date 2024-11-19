@@ -4,25 +4,20 @@
   "description": "An SEO analysis tool.",
   "main": "server.js",
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-scripts eject",
-    "server": "node server.js",
-    "dev": "concurrently \"npm run server\" \"npm run start\""
+    "start": "node server.js",
+    "server": "node server.js"
   },
   "dependencies": {
     "dotenv": "^8.6.0",
-    "mongodb": "^3.7.4",
-    "react-scripts": "^5.0.1"
+    "express": "^4.21.1",
+    "mangodb": "^1.0.0",
+    "mongodb": "^3.7.4"
   },
   "devDependencies": {
-    "concurrently": "^9.1.0",
-    "react-app-rewired": "^2.2.1",
-    "vercel": "^21.3.3"
+    "concurrently": "^9.1.0"
   },
   "engines": {
-    "node": "14.x"
+    "node": "20.x"
   },
   "keywords": [],
   "author": "",
