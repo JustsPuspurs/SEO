@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
         messageDiv.textContent = message;
     }
 
-const API_BASE_URL ='http://localhost:3000';
-// const API_BASE_URL = 'https://seo-ibe8m7vw2-mpvisions-projects.vercel.app';
+    //const API_BASE_URL ='http://localhost:3000';
+    const API_BASE_URL = 'https://seo-mpvision1234.vercel.app';
     console.log('Hostname:', window.location.hostname);
     console.log('API Base URL:', API_BASE_URL);
 

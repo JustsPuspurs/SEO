@@ -5,21 +5,17 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "server": "node server.js"
+    "dev": "vercel dev"
   },
   "dependencies": {
     "dotenv": "^8.6.0",
     "express": "^4.21.1",
-    "mangodb": "^1.0.0",
     "mongodb": "^3.7.4"
   },
   "devDependencies": {
-    "concurrently": "^9.1.0"
+    "vercel": "^39.0.4"
   },
   "engines": {
     "node": "20.x"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }

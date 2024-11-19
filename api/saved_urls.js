@@ -1,13 +1,19 @@
-const express = require('express');
-const router = express.Router();
 require('dotenv').config();
 const { connectToDatabase } = require('../lib/db');
 
-router.get('/', async (req, res) => {
+module.exports = async (req, res) => {
     // Setup CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    if (req.method === 'OPTIONS') {
+        return res.status(204).end(); // Preflight request
+    }
+
+    if (req.method !== 'GET') {
+        return res.status(405).json({ error: 'Method not allowed' });
+    }
 
     try {
         const { db } = await connectToDatabase();
@@ -35,6 +41,4 @@ router.get('/', async (req, res) => {
         console.error('Database error:', err);
         res.status(500).json({ error: 'Failed to fetch saved URLs' });
     }
-});
-
-module.exports = router;
+};

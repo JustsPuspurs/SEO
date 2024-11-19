@@ -1,12 +1,10 @@
 const express = require('express');
 const path = require('path');
-const app = express();
 const dotenv = require('dotenv');
 const { connectToDatabase } = require('./lib/db'); // Ensure this file exists and is correct
 dotenv.config();
 
-// Define the port for local development; Vercel will override this
-const PORT = process.env.PORT || 3000;
+const app = express();
 
 // Middleware to parse JSON requests
 app.use(express.json());
@@ -42,12 +40,5 @@ app.use((req, res) => {
     res.status(404).json({ error: 'Route not found' });
 });
 
-// Start the server for local development
-if (process.env.NODE_ENV !== 'production') {
-    app.listen(PORT, () => {
-        console.log(`Server running locally at http://localhost:${PORT}`);
-    });
-}
-
-// Export the app for Vercel
+// Export the Express app as a Vercel serverless function
 module.exports = app;
