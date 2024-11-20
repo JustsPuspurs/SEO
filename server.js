@@ -13,11 +13,11 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
-app.use('/api/saved', require('./api/saved/[id]')); // Handle saved details by ID
-app.use('/api/analyze', require('./api/analyze')); // Analyze a site
-app.use('/api/rapidAPI', require('./api/rapidAPI')); // RapidAPI handler
-app.use('/api/save', require('./api/save')); // Save analysis results
-app.use('/api/saved_urls', require('./api/saved_urls')); // Get all saved URLs
+app.use('/api/saved', require('./api/saved/[id]')); 
+app.use('/api/analyze', require('./api/analyze')); 
+app.use('/api/rapidAPI', require('./api/rapidAPI'));
+app.use('/api/save', require('./api/save'));
+app.use('/api/saved_urls', require('./api/saved_urls'));
 
 // Root route for serving the frontend (if applicable)
 app.get('/', (req, res) => {
